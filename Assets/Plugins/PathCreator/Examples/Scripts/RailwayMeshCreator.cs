@@ -7,6 +7,8 @@ public class RailwayMeshCreator : PathSceneTool
 {
     public float roadWidth;
     public float railThickness;
+    public float railThicknessY = 0.5f;
+    public float sleepersYOffset = 0.25f;
     public Material railMaterial;
     public GameObject[] sleeperPrefabs;
     public GameObject holder;
@@ -39,7 +41,7 @@ public class RailwayMeshCreator : PathSceneTool
 
             while (dst < path.length)
             {
-                Vector3 point = path.GetPointAtDistance(dst) - Vector3.up * 0.1f;
+                Vector3 point = path.GetPointAtDistance(dst) - path.GetNormalAtDistance(dst) * sleepersYOffset;
                 Quaternion rot = path.GetRotationAtDistance(dst);
                 rot = Quaternion.Lerp(rot, Random.rotation, randomizeRotation);
                 Instantiate(sleeperPrefabs[Random.Range(0, sleeperPrefabs.Length)], point, rot, holder.transform);
@@ -78,8 +80,8 @@ public class RailwayMeshCreator : PathSceneTool
 
         for (int i = 0; i < path.NumPoints; i++)
         {
-            Vector3 localUp = (usePathNormals) ? Vector3.Cross(path.GetTangent(i), path.GetNormal(i)) : path.up;
-            Vector3 localRight = (usePathNormals) ? path.GetNormal(i) : Vector3.Cross(localUp, path.GetTangent(i));
+            Vector3 localUp = (usePathNormals) ? path.GetNormal(i) : path.up;
+            Vector3 localRight = (usePathNormals) ? -Vector3.Cross(path.GetTangent(i), path.GetNormal(i)) : Vector3.Cross(localUp, path.GetTangent(i));
 
             // Find position to left and right of current path vertex
             Vector3 vertSideA = path.GetPoint(i) + localRight * Mathf.Abs(roadWidth);
@@ -89,8 +91,8 @@ public class RailwayMeshCreator : PathSceneTool
             verts[vertIndex + 0] = vertSideA;
             verts[vertIndex + 1] = vertSideB;
             // Add bottom of road vertices
-            verts[vertIndex + 2] = vertSideA - localUp * 0.2f;
-            verts[vertIndex + 3] = vertSideB - localUp * 0.2f;
+            verts[vertIndex + 2] = vertSideA - localUp * railThicknessY;
+            verts[vertIndex + 3] = vertSideB - localUp * railThicknessY;
 
             // Duplicate vertices to get flat shading for sides of road
             verts[vertIndex + 4] = verts[vertIndex + 0];

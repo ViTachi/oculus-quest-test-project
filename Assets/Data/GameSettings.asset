@@ -1,0 +1,50 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a02b12eadf4474648b8e491aab856ba4, type: 3}
+  m_Name: GameSettings
+  m_EditorClassIdentifier: 
+  gameSettingsJson: {fileID: 4900000, guid: 3ddf5fe2181d8b94194b36b5063d81d6, type: 3}
+  gameSettingsData:
+    mainSettings:
+      testProp: 3
+      testProp2:
+      - rfw
+      - q4rffgwg
+      - qwrwq3r2wt
+    unitSettings:
+      unitsData:
+      - UnitType: {fileID: 11400000, guid: aab5a7e544179454c81e125f3c2f7724, type: 2}
+        unitPrefabs:
+        - {fileID: 7588345440177666445, guid: e702ee1d3bd632b4692f8787a9665fdc, type: 3}
+      - UnitType: {fileID: 11400000, guid: 0e578e1b14193884c8ebecfdb30cd7b2, type: 2}
+        unitPrefabs:
+        - {fileID: 825154071000477587, guid: 2fea91b31a838b84da9dfff36a647df5, type: 3}
+      - UnitType: {fileID: 11400000, guid: 0fc0f4c56bf579b418725808fd41181d, type: 2}
+        unitPrefabs:
+        - {fileID: 8471605484515284393, guid: 78974c89dd38bd4438efb050bf6975ed, type: 3}
+      - UnitType: {fileID: 11400000, guid: e47ee725d084f9244a9af112b571c214, type: 2}
+        unitPrefabs: []
+      - UnitType: {fileID: 11400000, guid: 89a143c7082046144917bb1ddb997632, type: 2}
+        unitPrefabs: []
+      - UnitType: {fileID: 11400000, guid: 43b24a67fd357f1409fc1c3262f8b99d, type: 2}
+        unitPrefabs: []
+    trainSettings:
+      startSlotsData:
+      - slotType: 0
+        unitType: {fileID: 11400000, guid: aab5a7e544179454c81e125f3c2f7724, type: 2}
+        level: 1
+      - slotType: 1
+        unitType: {fileID: 11400000, guid: 0e578e1b14193884c8ebecfdb30cd7b2, type: 2}
+        level: 1
+      - slotType: 2
+        unitType: {fileID: 11400000, guid: 0fc0f4c56bf579b418725808fd41181d, type: 2}
+        level: 1

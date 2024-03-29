@@ -247,7 +247,6 @@ Transform:
   - {fileID: 4888947027582882695}
   - {fileID: 266196320043885084}
   - {fileID: 6857124269822221816}
-  - {fileID: 6006480455605390683}
   m_Father: {fileID: 9093208254694690689}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &4632736982217419571
@@ -454,13 +453,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   unit: {fileID: 2522607696753509272}
-  movement: {fileID: 5613899206244051618}
+  movement: {fileID: 0}
   vision: {fileID: 7435079289659432390}
   intentions:
   - {fileID: 8416431066639098063}
   - {fileID: 6715255748460366887}
   - {fileID: 7235280192200832065}
-  - {fileID: 6509097235939180001}
 --- !u!1 &6321893357942994129
 GameObject:
   m_ObjectHideFlags: 0
@@ -472,7 +470,6 @@ GameObject:
   - component: {fileID: 1804948809889175624}
   - component: {fileID: 2522607696753509272}
   - component: {fileID: 526530339007296575}
-  - component: {fileID: 492786539292602510}
   m_Layer: 8
   m_Name: DefaultUnit
   m_TagString: Untagged
@@ -537,28 +534,6 @@ SphereCollider:
   serializedVersion: 3
   m_Radius: 0.1
   m_Center: {x: 0, y: 0, z: 0}
---- !u!195 &492786539292602510
-NavMeshAgent:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6321893357942994129}
-  m_Enabled: 1
-  m_AgentTypeID: 0
-  m_Radius: 0.2
-  m_Speed: 3.5
-  m_Acceleration: 15
-  avoidancePriority: 50
-  m_AngularSpeed: 360
-  m_StoppingDistance: 0
-  m_AutoTraverseOffMeshLink: 1
-  m_AutoBraking: 1
-  m_AutoRepath: 1
-  m_Height: 2
-  m_BaseOffset: 0
-  m_WalkableMask: 4294967295
-  m_ObstacleAvoidanceType: 4
 --- !u!1 &7701854024996252593
 GameObject:
   m_ObjectHideFlags: 0
@@ -653,53 +628,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 5585937707504388445}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &8147889390695714566
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 6006480455605390683}
-  - component: {fileID: 6509097235939180001}
-  m_Layer: 8
-  m_Name: Patrolling
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &6006480455605390683
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8147889390695714566}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 960292305938670850}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &6509097235939180001
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8147889390695714566}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 39d16da592f25a440b8410bad011a9e7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  priority: 2
-  patrolPoints: []
-  waitDuration: 2
 --- !u!1 &8156428048467934136
 GameObject:
   m_ObjectHideFlags: 0
@@ -709,7 +637,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5573361983548560742}
-  - component: {fileID: 5613899206244051618}
   m_Layer: 8
   m_Name: Movement
   m_TagString: Untagged
@@ -732,17 +659,3 @@ Transform:
   m_Children: []
   m_Father: {fileID: 9093208254694690689}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &5613899206244051618
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8156428048467934136}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 26345d9664ed28c4b9227cf06293ef3f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  reachTargetStopDistance: 1
-  agent: {fileID: 492786539292602510}

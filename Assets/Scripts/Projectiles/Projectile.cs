@@ -10,7 +10,7 @@ public class Projectile : MonoBehaviour
 
     public Action OnReachTarget;
 
-    public void Launch(Unit target, DamageData damage)
+    public virtual void Launch(Unit target, DamageData damage)
     {
         startPosition = transform.position;
         this.target = target;

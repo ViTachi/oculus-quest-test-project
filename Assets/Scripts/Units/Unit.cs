@@ -3,6 +3,7 @@ using UnityEngine;
 
 public class Unit : MonoBehaviour
 {
+    [SerializeField] protected UnitType unitType;
     [SerializeField] protected Fraction fraction;
     [SerializeField] protected int unitLevel = 1;
     [SerializeField] protected float radius = 0;
@@ -14,10 +15,12 @@ public class Unit : MonoBehaviour
 
     public event Action OnDie;
     public event Action OnNeedRelease;
+    public event Action OnReleased;
 
     public Vector3 Position => visual.GetAnchor("Position") == null 
         ? transform.position : visual.GetAnchor("Position").position;
     public float Radius => radius;
+    public UnitType UnitType => unitType;
     public Fraction Fraction => fraction;
     public UnitStats UnitStats => unitStats;
     public AIPlayer AIPlayer => aIPlayer;
@@ -88,7 +91,7 @@ public class Unit : MonoBehaviour
 
     public void OnRelease()
     {
-        
+        OnReleased?.Invoke();
     }
 
     public void OnRevive()

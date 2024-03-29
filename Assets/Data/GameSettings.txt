@@ -1,0 +1,11 @@
+{
+  "mainSettings": {
+    "testProp": 3,
+    "testProp2": [
+      "rfw",
+      "q4rffgwg",
+      "qwrwq3r2wt"
+    ]
+  },
+  "unitSettings": {}
+}

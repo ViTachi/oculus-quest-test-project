@@ -11,10 +11,17 @@ public class Bomb : Projectile
     [SerializeField] private ParticleSystem explosionFx;
 
     private float moveAmount = 0f;
+    private float distance = 0f;
 
     private void OnEnable()
     {
         moveAmount = 0f;
+    }
+
+    public override void Launch(Unit target, DamageData damage)
+    {
+        base.Launch(target, damage);
+        distance = (startPosition - targetPosition).magnitude;
     }
 
     private void Update()
@@ -26,10 +33,12 @@ public class Bomb : Projectile
 
         moveAmount += speed * Time.deltaTime;
 
-        float y = (startPosition - targetPosition).magnitude
-            * height * heightCurve.Evaluate(moveAmount);
+        float moveProgress = moveAmount / distance;
 
-        Vector3 position = Vector3.Lerp(startPosition, targetPosition, moveAmount)
+        float y = (startPosition - targetPosition).magnitude
+            * height * heightCurve.Evaluate(moveProgress);
+
+        Vector3 position = Vector3.Lerp(startPosition, targetPosition, moveProgress)
             + Vector3.up * y;
 
         Quaternion rotation = Quaternion.LookRotation(position - transform.position, Vector3.up);
@@ -37,7 +46,7 @@ public class Bomb : Projectile
         transform.position = position;
         transform.rotation = rotation;
 
-        if (moveAmount >= 1f)
+        if (moveAmount >= distance)
         {
             ReachTarget();
         }
