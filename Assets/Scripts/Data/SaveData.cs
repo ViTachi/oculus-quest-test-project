@@ -6,8 +6,8 @@ public class SaveData
     public static void Save() => GameData.Instance.Save();
 
 
-    [JsonProperty] private PlayerSaveData accountsData = new PlayerSaveData();
-    [JsonIgnore] public PlayerSaveData AccountsData => accountsData;
+    [JsonProperty] private PlayerSaveData playerSaveData = new PlayerSaveData();
+    [JsonIgnore] public PlayerSaveData PlayerSaveData => playerSaveData;
 
 
     [JsonProperty] private TrainSaveData trainData = new TrainSaveData();
