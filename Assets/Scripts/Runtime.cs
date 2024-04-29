@@ -5,7 +5,7 @@ public class Runtime : MonoBehaviour
 {
     private void Awake()
     {
-        Application.targetFrameRate = 60;       
+        Application.targetFrameRate = 120;       
     }
 
     [Button]

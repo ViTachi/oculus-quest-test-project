@@ -60,8 +60,6 @@ MeshRenderer:
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 2
   m_RayTraceProcedural: 0
-  m_RayTracingAccelStructBuildFlagsOverride: 0
-  m_RayTracingAccelStructBuildFlags: 1
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -238,8 +236,6 @@ MeshRenderer:
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 2
   m_RayTraceProcedural: 0
-  m_RayTracingAccelStructBuildFlagsOverride: 0
-  m_RayTracingAccelStructBuildFlags: 1
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -338,8 +334,6 @@ MeshRenderer:
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 2
   m_RayTraceProcedural: 0
-  m_RayTracingAccelStructBuildFlagsOverride: 0
-  m_RayTracingAccelStructBuildFlags: 1
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -399,13 +393,13 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3692532229730847025, guid: e16f15393dec6484391d0f3b6afbc4f7,
         type: 3}
-      propertyPath: 'intentions.Array.data[3]'
+      propertyPath: intentions.Array.data[3]
       value: 
       objectReference: {fileID: 9092569269066796404}
     - target: {fileID: 4050415083585316212, guid: e16f15393dec6484391d0f3b6afbc4f7,
         type: 3}
       propertyPath: stats.Array.data[6].value
-      value: 5
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5001436643560460773, guid: e16f15393dec6484391d0f3b6afbc4f7,
         type: 3}

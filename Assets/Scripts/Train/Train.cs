@@ -6,11 +6,11 @@ using UnityEngine;
 public class Train : MonoBehaviour
 {
     [SerializeField] private float yOffset = 0f;
-    [SerializeField] private Vector3 rotationFix = Vector3.zero;
     [SerializeField] private float targetSpeed;
     [SerializeField] private float acceleration;
     [SerializeField] private PathCreator pathCreator;
     [SerializeField] private EndOfPathInstruction endOfPathInstruction;
+    [SerializeField] private Transform trainBody;
 
     private float distance = 0f;
     private float currentSpeed = 0f;
@@ -43,7 +43,7 @@ public class Train : MonoBehaviour
     {
         if (pathCreator == null) return;
         transform.position = pathCreator.path.GetPointAtDistance(distance, endOfPathInstruction) + Vector3.up * yOffset;
-        transform.rotation = pathCreator.path.GetRotationAtDistance(distance, endOfPathInstruction) * Quaternion.Euler(rotationFix);
+        trainBody.rotation = pathCreator.path.GetRotationAtDistance(distance, endOfPathInstruction);
     }
 
     private void RotateWheels(float delta)
